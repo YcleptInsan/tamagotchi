@@ -1,0 +1,8 @@
+<h1>Your Tomogatchi</h1>
+<ul>
+  @foreach (var item in Model)
+  {
+    <li><a href='/tomo-name'>@item </a></li>
+  }
+</ul>
+<a href='/tasks/new'>Add new task</a>
