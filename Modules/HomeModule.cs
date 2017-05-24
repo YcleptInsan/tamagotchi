@@ -10,12 +10,14 @@ namespace Tomogatchi
     {
       Get["/"] =_=>
       {
-        return View["Views.cshtml"];
+        List<userTomogatchi> allTomogatchi = userTomogatchi.GetAll();
+        return View["views.cshtml"];
       };
-      Get["/tomo-name"] =_=>
+      Post["/tomo-name"] =_=>
       {
-        userTomogatchi myTamagotchi = new userTomogatchi(Request.Form["new-name"]);
-        return View["yourTomo.cshtml", myTamagotchi];
+        userTomogatchi myTomogatchi = new userTomogatchi(Request.Form["new-name"]);
+        List<userTomogatchi> allTomogatchi = userTomogatchi.GetAll();
+        return View["yourTomo.cshtml", allTomogatchi];
       };
     }
   }

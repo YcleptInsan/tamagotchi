@@ -2,7 +2,7 @@
 <ul>
   @foreach (var item in Model)
   {
-    <li><a href='/tomo-name'>@item </a></li>
+    <li><a href='/tomo-name'></a>@item.GetName()</li>
   }
 </ul>
-<a href='/tasks/new'>Add new task</a>
+<a href='/tasks/new'>Add new Tomogatchi</a>

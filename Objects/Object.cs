@@ -15,11 +15,11 @@ namespace Tomogatchi.Objects
     public userTomogatchi(string name)
     {
       _name = name;
+      _instances.Add(this);
       _id = _instances.Count;
       _food = 60;
       _attention = 45;
       _rest = 30;
-      _instances.Add(this);
     }
     public string GetName()
     {
@@ -33,6 +33,10 @@ namespace Tomogatchi.Objects
     {
       return _id;
     }
+    public static List<userTomogatchi> GetAll()
+   {
+     return _instances;
+   }
     public int GetFood()
     {
       return _food;
